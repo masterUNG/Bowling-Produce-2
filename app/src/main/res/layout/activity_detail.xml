@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="appewtc.masterung.bowlingproduce.DetailActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textView9"
+        android:textSize="@dimen/h1"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/text" />
+
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="500dp"
+        android:id="@+id/imageView6"
+
+        android:layout_below="@+id/textView9"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentEnd="false"
+        android:layout_centerInParent="true"
+        android:layout_alignParentStart="false" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/button2"
+
+        android:layout_alignParentBottom="true"
+        android:textColor="#0864e5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textView10"
+        android:textSize="@dimen/h1"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/button2"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/text"
+        android:layout_alignParentEnd="false" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/imageView6"
+        android:layout_above="@+id/textView10"
+        android:layout_margin="15dp"
+        android:padding="15dp"
+        android:background="#46000000">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textView11"
+            android:textSize="@dimen/h2"
+            android:textStyle="italic"
+            android:textColor="@color/text" />
+    </ScrollView>
+</RelativeLayout>
