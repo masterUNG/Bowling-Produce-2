@@ -2,8 +2,8 @@ package appewtc.masterung.bowlingproduce;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ListView;
 
@@ -11,17 +11,21 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 public class Main2Activity extends AppCompatActivity {
 
     //Explicit
     private String urlJSoN = "http://203.147.24.71/ars/get_cat.php";
+    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        ListView listView = (ListView) findViewById(R.id.livShowCat);
+        listView = (ListView) findViewById(R.id.livShowCat);
 
         //Create ListView
         SynCat synCat = new SynCat(Main2Activity.this);
@@ -61,6 +65,32 @@ public class Main2Activity extends AppCompatActivity {
             super.onPostExecute(s);
 
             Log.d("13octV1", "JSON ==> " + s);
+
+            try {
+
+                JSONArray jsonArray = new JSONArray(s);
+
+                String[] catStrings = new String[jsonArray.length()];
+                String[] imageStrings = new String[jsonArray.length()];
+                String[] urlStrings = new String[jsonArray.length()];
+
+                for (int i=0;i<jsonArray.length();i++) {
+
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+                    catStrings[i] = jsonObject.getString("Category");
+                    imageStrings[i] = jsonObject.getString("Image");
+                    urlStrings[i] = jsonObject.getString("urlJSON");
+
+                }   // for
+
+                CatAdapter catAdapter = new CatAdapter(context, catStrings, imageStrings);
+                listView.setAdapter(catAdapter);
+
+
+            } catch (Exception e) {
+                Log.d("13octV1", "e onPost ==> " + e.toString());
+            }
 
         }   // onPost
 
