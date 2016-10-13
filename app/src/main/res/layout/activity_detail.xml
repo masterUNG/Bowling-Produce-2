@@ -30,7 +30,7 @@
         android:layout_alignParentEnd="false"
         android:layout_centerInParent="true"
         android:layout_alignParentStart="false"
-        android:layout_above="@+id/textView10" />
+        android:layout_above="@+id/scrollView" />
 
     <Button
         android:layout_width="match_parent"
@@ -56,9 +56,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="150dp"
         android:id="@+id/scrollView"
-        android:layout_below="@+id/imageView6"
         android:layout_above="@+id/textView10"
         android:layout_margin="15dp"
         android:padding="15dp"
