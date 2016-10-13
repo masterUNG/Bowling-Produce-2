@@ -54,7 +54,7 @@ public class ShowListProduct extends AppCompatActivity implements View.OnClickLi
         MainActivity mainActivity = new MainActivity();
         catStrings = mainActivity.getCatStrings();
 
-        if (categoryString.equals(catStrings[0])) {
+        if (    categoryString.equals(catStrings[0])) {
             urlJSONString = "http://swiftcodingthai.com/bow/get_product_cat1_master.php";
         } else if (categoryString.equals(catStrings[1])) {
             urlJSONString = "http://swiftcodingthai.com/bow/get_product_cat2_master.php";
