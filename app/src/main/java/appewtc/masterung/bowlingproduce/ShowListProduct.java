@@ -41,6 +41,7 @@ public class ShowListProduct extends AppCompatActivity implements View.OnClickLi
         button = (Button) findViewById(R.id.button);
 
         //Get Value from Intent
+        urlJSONString = getIntent().getStringExtra("urlJSON");
         categoryString = getIntent().getStringExtra("Category");
 
         //Show Text
@@ -51,26 +52,26 @@ public class ShowListProduct extends AppCompatActivity implements View.OnClickLi
 
         //Setup urlJSON
 
-        MainActivity mainActivity = new MainActivity();
-        catStrings = mainActivity.getCatStrings();
+        //MainActivity mainActivity = new MainActivity();
+       // catStrings = mainActivity.getCatStrings();
 
-        if (    categoryString.equals(catStrings[0])) {
-            urlJSONString = "http://swiftcodingthai.com/bow/get_product_cat1_master.php";
-        } else if (categoryString.equals(catStrings[1])) {
-            urlJSONString = "http://swiftcodingthai.com/bow/get_product_cat2_master.php";
-        } else if (categoryString.equals(catStrings[2])) {
-            urlJSONString = "http://swiftcodingthai.com/bow/get_product_cat3_master.php";
-        } else if (categoryString.equals(catStrings[3])) {
-            urlJSONString = "http://swiftcodingthai.com/bow/get_product_cat4_master.php";
-        } else if (categoryString.equals(catStrings[4])) {
-            urlJSONString = "http://swiftcodingthai.com/bow/get_product_cat5_master.php";
-        } else if (categoryString.equals(catStrings[5])) {
-            urlJSONString = "http://swiftcodingthai.com/bow/get_product_cat6_master.php";
-        } else if (categoryString.equals(catStrings[6])) {
-            urlJSONString = "http://swiftcodingthai.com/bow/get_product_cat7_master.php";
-        } else {
-            urlJSONString = "http://swiftcodingthai.com/bow/get_product_cat8_master.php";
-        }
+//        if (    categoryString.equals(catStrings[0])) {
+//            urlJSONString = "http://swiftcodingthai.com/bow/get_product_cat1_master.php";
+//        } else if (categoryString.equals(catStrings[1])) {
+//            urlJSONString = "http://swiftcodingthai.com/bow/get_product_cat2_master.php";
+//        } else if (categoryString.equals(catStrings[2])) {
+//            urlJSONString = "http://swiftcodingthai.com/bow/get_product_cat3_master.php";
+//        } else if (categoryString.equals(catStrings[3])) {
+//            urlJSONString = "http://swiftcodingthai.com/bow/get_product_cat4_master.php";
+//        } else if (categoryString.equals(catStrings[4])) {
+//            urlJSONString = "http://swiftcodingthai.com/bow/get_product_cat5_master.php";
+//        } else if (categoryString.equals(catStrings[5])) {
+//            urlJSONString = "http://swiftcodingthai.com/bow/get_product_cat6_master.php";
+//        } else if (categoryString.equals(catStrings[6])) {
+//            urlJSONString = "http://swiftcodingthai.com/bow/get_product_cat7_master.php";
+//        } else {
+//            urlJSONString = "http://swiftcodingthai.com/bow/get_product_cat8_master.php";
+//        }
 
         //Create ListView by Data on Server
         SynProduce synProduce = new SynProduce(this, listView, urlJSONString);
