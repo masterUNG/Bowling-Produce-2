@@ -19,7 +19,7 @@ public class ShowVideoActivity extends AppCompatActivity {
         mediaController.setAnchorView(videoView);
         videoView.setMediaController(mediaController);
         videoView.setVideoURI(Uri.parse("android.resource://" +
-                getPackageName() + "/" + R.raw.master_ung));
+                getPackageName() + "/" + getIntent().getIntExtra("Video", R.raw.master_ung)));
         videoView.start();
 
     }   // Main Method
